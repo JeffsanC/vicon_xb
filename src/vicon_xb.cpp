@@ -353,10 +353,9 @@ int main(int argc, char **argv)
                                 poseStamped.pose.position.x = viconPose.x;
                                 poseStamped.pose.position.y = viconPose.y;
                                 poseStamped.pose.position.z = viconPose.z;
-                                tf::Quaternion q = tf::Quaternion(sin(viconPose.roll/2), 0, 0, cos(viconPose.roll/2))
+                                tf::Quaternion qBL = tf::Quaternion(sin(viconPose.roll/2), 0, 0, cos(viconPose.roll/2))
                                                     *tf::Quaternion(0, sin(viconPose.pitch/2), 0, cos(viconPose.pitch/2))
                                                     *tf::Quaternion(0, 0, sin(viconPose.yaw/2), cos(viconPose.yaw/2));
-                                tf::Quaternion qBL = q;
                                 poseStamped.pose.orientation.x = qBL.x();
                                 poseStamped.pose.orientation.y = qBL.y();
                                 poseStamped.pose.orientation.z = qBL.z();
