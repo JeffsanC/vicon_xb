@@ -349,7 +349,7 @@ int main(int argc, char **argv)
                                 geometry_msgs::PoseStamped poseStamped;
                                 poseStamped.header.seq = seqCount++;
                                 poseStamped.header.stamp = viconPose.time_stamp;
-                                poseStamped.header.frame_id = "/local_frame";
+                                poseStamped.header.frame_id = "vicon";
                                 poseStamped.pose.position.x = viconPose.x;
                                 poseStamped.pose.position.y = viconPose.y;
                                 poseStamped.pose.position.z = viconPose.z;
@@ -370,7 +370,7 @@ int main(int argc, char **argv)
 
                                 viconPathMsg.header.seq = seqCount;
                                 viconPathMsg.header.stamp = ros::Time::now();
-                                viconPathMsg.header.frame_id = "/local_frame";
+                                viconPathMsg.header.frame_id = "vicon";
 
                                 viconPathMsg.poses = viconPath;
 
